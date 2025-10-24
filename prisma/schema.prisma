@@ -1,0 +1,127 @@
+// ---------- Generator & Datasource ----------
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ---------- Models ----------
+model Course {
+  id          String   @id @default(cuid())
+  title       String
+  slug        String   @unique
+  description String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  applications Application[]
+  cohorts      Cohort[]
+}
+
+model Cohort {
+  id        String    @id @default(cuid())
+  courseId  String
+  name      String?
+  startDate DateTime?
+  endDate   DateTime?
+  capacity  Int?
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+
+  // Relations
+  applications Application[]
+  course       Course        @relation(fields: [courseId], references: [id])
+  enrollments  Enrollment[]
+
+  @@index([courseId])
+}
+
+model Applicant {
+  id        String   @id @default(cuid())
+  fullName  String
+  email     String   @unique
+  linkedin  String?
+  github    String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  applications Application[]
+  enrollments  Enrollment[]
+}
+
+model Application {
+  id String @id @default(cuid())
+
+  // Optional relations at apply-time
+  courseId    String?
+  cohortId    String?
+  applicantId String?
+
+  // Relation fields (back-relations for Course/Cohort/Applicant)
+  course    Course?    @relation(fields: [courseId], references: [id])
+  cohort    Cohort?    @relation(fields: [cohortId], references: [id])
+  applicant Applicant? @relation(fields: [applicantId], references: [id])
+
+  // Form snapshot fields
+  fullName    String
+  email       String
+  exp         String // keep as String; or switch to ExperienceLevel
+  motivation  String
+  time        String
+  terms       Boolean
+  linkedin    String?
+  github      String?
+  resume      String?
+  scholarship String? // keep as String; or switch to ScholarshipChoice
+
+  status    ApplicationStatus @default(NotSubmitted)
+  createdAt DateTime          @default(now())
+  updatedAt DateTime          @updatedAt
+
+  @@index([courseId])
+  @@index([cohortId])
+  @@index([email])
+  @@index([status])
+}
+
+model Enrollment {
+  id          String   @id @default(cuid())
+  cohortId    String
+  applicantId String
+  role        String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  applicant Applicant @relation(fields: [applicantId], references: [id])
+  cohort    Cohort    @relation(fields: [cohortId], references: [id])
+
+  @@unique([cohortId, applicantId])
+  @@index([applicantId])
+}
+
+// ---------- Enums ----------
+enum ExperienceLevel {
+  beginner
+  intermediate
+}
+
+enum ScholarshipChoice {
+  yes
+  no
+}
+
+enum ApplicationStatus {
+  submitted
+  NotSubmitted
+  reviewing
+  accepted
+  rejected
+  waitlisted
+  withdrawn
+}
