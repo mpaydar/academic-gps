@@ -37,8 +37,8 @@ export default function CohortApply() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white via-slate-50 to-white">
-      {/* Top banner */}
+<div className="min-h-screen bg-gradient-to-b from-slate-100 via-slate-200 to-slate-100">
+{/* Top banner */}
       <header className="sticky top-0 z-20 border-b bg-white/70 backdrop-blur">
         <div className="mx-auto max-w-7xl px-6 py-3 flex items-center justify-between">
           <div className="flex items-center gap-2 font-semibold">
