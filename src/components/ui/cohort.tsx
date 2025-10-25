@@ -58,7 +58,7 @@ export default function CohortApply() {
           transition={{ duration: 0.5 }}
           className="text-center"
         >
-          <h1 className="text-3xl md:text-5xl font-extrabold ">
+          <h1 className="text-3xl md:text-5xl font-extrabold text-black ">
             Apply to join the <span className="text-blue-600">Fall 2025 Cohort</span>
           </h1>
           <p className="mt-3 text-slate-600 text-lg">
