@@ -6,7 +6,7 @@ import { Check, Users, Sparkles, Clock, GraduationCap, LayoutDashboard, ShieldCh
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import Navbar from "@/components/ui/navbar";
+import Navbar from "@/components/ui/Navbar";
 // --- Countdown component (to cohort start) ---
 function useCountdown(targetDate: Date) {
   const [diff, setDiff] = useState<number>(() => targetDate.getTime() - Date.now());
