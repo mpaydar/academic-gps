@@ -22,6 +22,7 @@ export default function Navbar() {
           <a href="#how" className="hover:text-blue-700">How it works</a>
           <a href="#pricing" className="hover:text-blue-700">Cohort & Pricing</a>
           <a href="/all-seminars" className="hover:text-blue-700">Free Seminars</a>
+          <a href="/login" className="hover:text-blue-700">Login</a>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -41,6 +42,7 @@ export default function Navbar() {
             <a href="#how" onClick={() => setOpen(false)}>How it works</a>
             <a href="#pricing" onClick={() => setOpen(false)}>Cohort & Pricing</a>
             <a href="/all-seminars" onClick={() => setOpen(false)}>Free Seminars</a>
+            <a href="/login" onClick={() => setOpen(false)}>Login</a>
           </nav>
         </div>
       )}
