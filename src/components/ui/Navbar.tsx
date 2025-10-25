@@ -16,8 +16,8 @@ export default function Navbar() {
           <span>NextEd Cohort</span>
         </Link>
 
-        {/* Desktop Nav */}
-        <nav className="flex flex-row items-center gap-6 text-sm text-slate-800">
+        {/* Desktop Nav — hidden on small screens */}
+        <nav className="hidden md:flex flex-row items-center gap-6 text-sm text-slate-800">
           <a href="#curriculum" className="hover:text-blue-700">Curriculum</a>
           <a href="#how" className="hover:text-blue-700">How it works</a>
           <a href="#cohort" className="hover:text-blue-700">Cohort & Pricing</a>
@@ -30,11 +30,11 @@ export default function Navbar() {
           <Button asChild variant="outline" className="hidden sm:inline-flex">
             <Link href="#curriculum">View syllabus</Link>
           </Button>
-          <Button asChild variant="outline">
+          <Button asChild variant="outline" className="hidden sm:inline-flex">
             <Link href="/login">Login</Link>
           </Button>
 
-          {/* Mobile Menu Toggle */}
+          {/* Mobile Menu Toggle — visible only on small screens */}
           <button
             onClick={() => setOpen(!open)}
             className="md:hidden p-2 rounded-md hover:bg-slate-100"
@@ -47,12 +47,17 @@ export default function Navbar() {
 
       {/* Mobile Dropdown */}
       {open && (
-        <div className="flex flex-row bg-white border-t border-slate-200 py-4 flex flex-col items-center gap-4 text-sm text-slate-800">
+        <div className="flex flex-col items-center gap-4 bg-white border-t border-slate-200 py-4 text-sm text-slate-800 md:hidden">
           <a href="#curriculum" onClick={() => setOpen(false)}>Curriculum</a>
           <a href="#how" onClick={() => setOpen(false)}>How it works</a>
           <a href="#cohort" onClick={() => setOpen(false)}>Cohort & Pricing</a>
           <a href="/all-seminars" onClick={() => setOpen(false)}>Free Seminars</a>
           <a href="#faq" onClick={() => setOpen(false)}>FAQ</a>
+
+          {/* You can also show login/signup here for mobile */}
+          <Button asChild variant="outline">
+            <Link href="/login" onClick={() => setOpen(false)}>Login</Link>
+          </Button>
         </div>
       )}
     </header>
