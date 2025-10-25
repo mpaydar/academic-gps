@@ -6,7 +6,7 @@ import { Check, Users, Sparkles, Clock, GraduationCap, LayoutDashboard, ShieldCh
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-
+import Navbar from "@/components/ui/navbar";
 // --- Countdown component (to cohort start) ---
 function useCountdown(targetDate: Date) {
   const [diff, setDiff] = useState<number>(() => targetDate.getTime() - Date.now());
@@ -36,31 +36,7 @@ export default function Home() {
         <div className="absolute -bottom-24 -right-24 h-96 w-96 rounded-full bg-indigo-100 blur-3xl opacity-40" />
       </div>
 
-      {/* Navbar */}
-      <header className="sticky top-0 z-30 backdrop-blur bg-white/70 border-b border-slate-200">
-        <div className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
-          <Link href="#" className="flex items-center gap-2 font-semibold">
-            <Sparkles className="h-5 w-5 text-blue-600" />
-            <span>NextEd Cohort</span>
-          </Link>
-          <nav className="hidden md:flex items-center gap-6 text-sm">
-            <a href="#curriculum" className="hover:text-blue-700">Curriculum</a>
-            <a href="#how" className="hover:text-blue-700">How it works</a>
-            <a href="#cohort" className="hover:text-blue-700">Cohort & Pricing</a>
-            <a href="/all-seminars" className="hover:text-blue-700">Free Seminars</a>
-            <a href="#faq" className="hover:text-blue-700">FAQ</a>
-          </nav>
-          <div className="flex items-center gap-3">
-            <Button asChild variant="outline" className="hidden sm:inline-flex"> 
-              <Link href="#curriculum">View syllabus</Link>
-            </Button>
-            
-            <Button asChild variant="outline">
-              <Link href="/login">Login</Link>
-            </Button>
-          </div>
-        </div>
-      </header>
+     <Navbar />
 
       {/* Hero */}
       <section className="relative">

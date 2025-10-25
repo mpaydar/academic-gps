@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+export const runtime = 'nodejs';
 
 // app/(apply)/actions.ts
 'use server';
