@@ -17,7 +17,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-6 text-sm text-slate-800">
+        <nav className="flex flex-row items-center gap-6 text-sm text-slate-800">
           <a href="#curriculum" className="hover:text-blue-700">Curriculum</a>
           <a href="#how" className="hover:text-blue-700">How it works</a>
           <a href="#cohort" className="hover:text-blue-700">Cohort & Pricing</a>
@@ -47,7 +47,7 @@ export default function Navbar() {
 
       {/* Mobile Dropdown */}
       {open && (
-        <div className="md:hidden bg-white border-t border-slate-200 py-4 flex flex-col items-center gap-4 text-sm text-slate-800">
+        <div className="flex flex-row bg-white border-t border-slate-200 py-4 flex flex-col items-center gap-4 text-sm text-slate-800">
           <a href="#curriculum" onClick={() => setOpen(false)}>Curriculum</a>
           <a href="#how" onClick={() => setOpen(false)}>How it works</a>
           <a href="#cohort" onClick={() => setOpen(false)}>Cohort & Pricing</a>
