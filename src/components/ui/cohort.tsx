@@ -58,7 +58,7 @@ export default function CohortApply() {
           transition={{ duration: 0.5 }}
           className="text-center"
         >
-          <h1 className="text-3xl md:text-5xl font-extrabold leading-tight">
+          <h1 className="text-3xl md:text-5xl font-extrabold ">
             Apply to join the <span className="text-blue-600">Fall 2025 Cohort</span>
           </h1>
           <p className="mt-3 text-slate-600 text-lg">
@@ -74,7 +74,7 @@ export default function CohortApply() {
             </CardHeader>
             <CardContent className="px-6 pb-8 md:px-10 md:pb-10">
               <form ref={formRef} onSubmit={handleSubmit} className="space-y-8">
-                <input type="hidden" name="courseId" value="temp-course-id" />
+                <input type="hidden" name="courseId" value="temp-course-id" className="text-red-500" />
 
                 {/* Contact */}
                 <div className="grid md:grid-cols-2 gap-6">
