@@ -1,9 +1,9 @@
-export const runtime = 'nodejs';
+'use server';
+
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 // app/(apply)/actions.ts
-'use server';
 
 import { PrismaClient } from '@prisma/client';
 import sgMail from '@sendgrid/mail';
