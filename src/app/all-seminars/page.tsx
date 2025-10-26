@@ -38,20 +38,19 @@ export default function AllSeminars() {
                                 </CardHeader>
                                 <CardContent className="px-8 pb-7 space-y-4">
                                     <div className="text-slate-800 dark:text-slate-100 font-medium text-lg">
-                                        <a href="https://eprint.iacr.org/2022/1602" target="_blank" rel="noopener" className="block text-blue-700 dark:text-blue-300 underline hover:text-blue-900 dark:hover:text-blue-200 transition">
-                                            Topic: Survey on Fully Homomorphic Encryption, Theory, and Applications
+                                        <a href="https://crypto.stanford.edu/craig/craig-thesis.pdf" target="_blank" rel="noopener" className="block text-blue-700 dark:text-blue-300 underline hover:text-blue-900 dark:hover:text-blue-200 transition">
+                                            Topic: Fully homomorphic encryption scheme - craig gentry
                                         </a>
                                     </div>
                                     <div className="inline-flex gap-3 items-center justify-center mt-1 text-base">
                                         <span className="px-2 py-0.5 bg-indigo-100 dark:bg-indigo-900/60 text-indigo-700 dark:text-indigo-200 rounded-full font-semibold">
-                                            🗓️ Date: <span className="font-bold">October 28, 2025</span>
+                                            🗓️ Date: <span className="font-bold">Nov 01, 2025</span>
                                         </span>
                                         <span className="px-2 py-0.5 bg-pink-100 dark:bg-pink-900/40 text-pink-800 dark:text-pink-200 rounded-full font-medium animate-pulse">Live</span>
                                     </div>
                                     <p className="text-slate-600 dark:text-slate-300 text-[1rem] mt-2 text-center leading-relaxed">
-                                        Join us for a deep dive into state-of-the-art cryptography techniques,
-                                        <span className="font-bold text-blue-700 dark:text-blue-200"> practical AI</span>, and
-                                        <span className="font-bold text-indigo-700 dark:text-indigo-200"> real-world case studies</span>.
+                                        Join us for a deep dive in understanding fully homomorphic encryption
+                                        <span className="font-bold text-blue-700 dark:text-blue-200"> theory, applications, and real-world case studies</span>
                                     </p>
                                     <div className="flex justify-center">
                                         <a
